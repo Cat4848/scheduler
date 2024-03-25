@@ -6,7 +6,8 @@
   "type": "module",
   "module": "src/index.js",
   "scripts": {
-    "dev": "tsc -w"
+    "dev": "tsc -w",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "Catalin Pirtiu - catalinrol@gmail.com",
