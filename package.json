@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "Catalin Pirtiu - catalinrol@gmail.com",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.3"
+  }
 }
