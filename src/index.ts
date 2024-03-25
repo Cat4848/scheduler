@@ -26,8 +26,7 @@ function attachEventHandlerOnViewScheduleNames() {
 
   if (schedulesList !== null) {
     schedulesList.forEach((schedule) => {
-      schedule.addEventListener("click", () =>
-      );
+      schedule.addEventListener("click", );
     });
   }
 }

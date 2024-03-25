@@ -5,6 +5,7 @@ export interface ISchedule<OperationType> {
 }
 
 export interface IOperation {
+  id: string;
   name: string;
   description: string;
   duration: number;
