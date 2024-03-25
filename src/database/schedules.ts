@@ -1,6 +1,6 @@
 import { ISchedule, IOperation } from "../lib/definitions";
 
-export const bloodTestSchedule: ISchedule<IOperation> = {
+const bloodTestSchedule: ISchedule<IOperation> = {
   name: "Blood Test Schedule",
   operations: [
     {
@@ -50,3 +50,41 @@ export const bloodTestSchedule: ISchedule<IOperation> = {
     }
   ]
 };
+
+const elephantToothpaste: ISchedule<IOperation> = {
+  name: "Elephant Toothpaste",
+  operations: [
+    {
+      name: "Transfer",
+      description: "plate to position 1",
+      duration: 2000
+    },
+    {
+      name: "Dispense",
+      description: "50mL hydrogen peroxide solution",
+      duration: 2000
+    },
+    {
+      name: "Dispense",
+      description: "20mL dishwashing detergent",
+      duration: 3000
+    },
+    {
+      name: "Dispense",
+      description: "7 drops of food coloring",
+      duration: 3000
+    },
+    {
+      name: "Dispense",
+      description: "10mL potassium iodide solution",
+      duration: 2000
+    },
+    {
+      name: "Transfer",
+      description: "plate to position 0",
+      duration: 2000
+    }
+  ]
+};
+
+export const schedules = [bloodTestSchedule, elephantToothpaste];
