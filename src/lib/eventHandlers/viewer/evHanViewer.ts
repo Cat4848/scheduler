@@ -9,9 +9,15 @@ export function displayScheduleInEditor(
 
   if (editor !== null) {
     const [{ operations }] = schedules.filter((schedule) => schedule.id === id);
-    operations.forEach((operation) => {
+    
+    const operationsElements = operations.map((operation) => {
       const operationDescription = document.createElement("p");
-      operationDescription.setAttribute('class', 'operation-description');
+      operationDescription.setAttribute("class", "operation-description");
+      operationDescription.setAttribute("id", operation.id);
+      operationDescription.innerText = `${operation.name} ${operation.description}`;
+      return operationDescription;
     });
+
+    editor.append(...operationsElements);
   }
 }
