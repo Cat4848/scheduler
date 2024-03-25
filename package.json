@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "type": "module",
+  "module": "src/index.js",
   "scripts": {
     "dev": "tsc -w"
   },
@@ -11,8 +12,10 @@
   "author": "Catalin Pirtiu - catalinrol@gmail.com",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.11.30",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.3",
+    "typescript-eslint": "^7.3.1"
   }
 }
