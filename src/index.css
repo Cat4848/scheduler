@@ -1,3 +1,5 @@
+@import "./styles/variables.css";
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -7,6 +9,7 @@
 html,
 body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: var(--color-background-main);
 }
 
 a {
@@ -18,15 +21,29 @@ a {
   display: flex;
   flex-direction: column;
   gap: 2em;
+  border: 2px solid black;
 }
 
 .scheduler {
   display: flex;
-  gap: 2em;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.panel {
+  border-radius: 5px;
+  padding: 0.3rem;
+  background-color: var(--color-background-panel);
 }
 
 .viewer {
+  border: 2px solid green;
+  min-width: 5rem;
 }
 
 .editor {
+  border: 2px solid green;
+  min-width: 10rem;
 }
