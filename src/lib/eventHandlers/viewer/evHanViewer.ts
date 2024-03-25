@@ -12,6 +12,7 @@ export function displayScheduleInEditor({
   const editor = document.querySelector(".editor-schedule");
 
   if (editor !== null) {
+    editor.textContent = "";
     const [{ operations }] = schedules.filter((schedule) => schedule.id === id);
 
     const operationsElements = operations.map((operation) => {
