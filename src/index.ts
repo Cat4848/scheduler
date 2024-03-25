@@ -1,5 +1,6 @@
 import schedules from "./database/schedules.js";
 import { ISchedule, IOperation } from "./lib/definitions";
+import { displayScheduleInEditor } from "./lib/eventHandlers/viewer/evHanViewer.js";
 
 window.onload = () => {
   displaySchedulesNames(schedules);
@@ -26,7 +27,9 @@ function attachEventHandlerOnViewScheduleNames() {
 
   if (schedulesList !== null) {
     schedulesList.forEach((schedule) => {
-      schedule.addEventListener("click", );
+      schedule.addEventListener("click", () => {
+        displayScheduleInEditor({ id: schedule.id, schedules: schedules });
+      });
     });
   }
 }

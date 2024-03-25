@@ -1,15 +1,19 @@
 import { ISchedule, IOperation } from "../../definitions";
-import schedules from "../../../database/schedules.js";
 
-export function displayScheduleInEditor(
-  id: string,
-  schedules: ISchedule<IOperation>[]
-) {
-  const editor = document.querySelector(".viewer-schedule-list");
+interface DisplayScheduleInEditor {
+  id: string;
+  schedules: ISchedule<IOperation>[];
+}
+
+export function displayScheduleInEditor({
+  id = "",
+  schedules = []
+}: DisplayScheduleInEditor) {
+  const editor = document.querySelector(".editor-schedule");
 
   if (editor !== null) {
     const [{ operations }] = schedules.filter((schedule) => schedule.id === id);
-    
+
     const operationsElements = operations.map((operation) => {
       const operationDescription = document.createElement("p");
       operationDescription.setAttribute("class", "operation-description");
