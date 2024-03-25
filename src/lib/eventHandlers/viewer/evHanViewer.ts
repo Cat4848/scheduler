@@ -13,7 +13,13 @@ export function displayScheduleInEditor({
 
   if (editor !== null) {
     editor.textContent = "";
-    const [{ operations }] = schedules.filter((schedule) => schedule.id === id);
+    const [schedule] = schedules.filter((schedule) => schedule.id === id);
+    const { operations } = schedule;
+
+    const scheduleName = document.querySelector(".editor-schedule-name");
+    if (scheduleName !== null) {
+      scheduleName.textContent = schedule.name;
+    }
 
     const operationsElements = operations.map((operation) => {
       const operationDescription = document.createElement("p");
