@@ -1,0 +1,20 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  background-color: azure;
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-close-modal {
+  transform: translate(10px, -20px);
+  padding: 0.5rem 0.7rem;
+  background: #eee;
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+}
