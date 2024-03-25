@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script async type="module" src="../dist/index.js"></script>
+    <link rel="stylesheet" href="./index.css" />
+    <title>Scheduler</title>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <section class="actions">
+          <h1>Action Buttons</h1>
+        </section>
+
+        <section class="scheduler">
+          <section class="panel viewer">
+            <h1>Schedule Viewer</h1>
+
+            <div class="viewer-action-buttons">
+              <div class="overlay hidden"></div>
+              <button type="button" class="btn btn-primary btn-open-modal">
+                Add Schedule
+              </button>
+              <button type="button" class="btn btn-danger">
+                Delete Schedule
+              </button>
+            </div>
+
+            <section class="modal hidden">
+              <div class="modal-title">
+                <h3>Add Schedule</h3>
+                <button class="btn-close-modal">x</button>
+              </div>
+              <div>
+                <h4>New Schedule Info</h4>
+              </div>
+              <form action="">
+                <div class="input-group">
+                  <label for="input-schedule-name">Name</label>
+                  <input
+                    type="text"
+                    id="input-schedule-name"
+                    name="schedule-name"
+                  />
+                </div>
+                <h5>Operations</h5>
+                <select name="select-nr-operations" id="nr-operations">
+                  <option value="">-- Number of operations --</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+                <button type="submit" class="btn">Add Schedule</button>
+              </form>
+            </section>
+
+            <div class="viewer-schedule">
+              <h5 class="h5">Schedules List</h5>
+              <div class="viewer-schedule-list"></div>
+            </div>
+          </section>
+          <section class="panel editor">
+            <h1>Schedule Editor</h1>
+            <h5 class="h5">Schedule Name</h5>
+            <span class="editor-schedule-name"></span>
+            <div class="editor-schedule"></div>
+          </section>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
