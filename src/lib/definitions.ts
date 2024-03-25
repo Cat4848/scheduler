@@ -1,4 +1,5 @@
 export interface ISchedule<OperationType> {
+  id: string;
   name: string;
   operations: OperationType[];
 }

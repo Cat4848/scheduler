@@ -1,6 +1,7 @@
 import { ISchedule, IOperation } from "../lib/definitions";
 
 const bloodTestSchedule: ISchedule<IOperation> = {
+  id: "e24f2b",
   name: "Blood Test Schedule",
   operations: [
     {
@@ -52,6 +53,7 @@ const bloodTestSchedule: ISchedule<IOperation> = {
 };
 
 const elephantToothpaste: ISchedule<IOperation> = {
+  id: "622mk7",
   name: "Elephant Toothpaste",
   operations: [
     {
