@@ -87,4 +87,5 @@ const elephantToothpaste: ISchedule<IOperation> = {
   ]
 };
 
-export const schedules = [bloodTestSchedule, elephantToothpaste];
+const schedules = [bloodTestSchedule, elephantToothpaste];
+export default schedules;
