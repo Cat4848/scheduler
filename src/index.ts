@@ -4,7 +4,7 @@ import {
   displayScheduleInEditor
 } from "./lib/display.js";
 import { initModal } from "./lib/modal.js";
-import { initScheduleForm } from "./lib/sheduleForm.js";
+import { initScheduleForm } from "./lib/scheduleForm.js";
 
 window.onload = () => {
   displaySchedulesNames(schedules);
