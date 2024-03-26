@@ -1,10 +1,25 @@
-import { ISchedule, IOperation } from "../../definitions";
+import { ISchedule, IOperation } from "./definitions";
+
+export function displaySchedulesNames(schedules: ISchedule<IOperation>[]) {
+  const schedulesList = document.querySelector(
+    ".viewer-schedule-list"
+  ) as HTMLDivElement;
+  schedulesList.innerHTML = "";
+
+  const list = schedules.map((schedule) => {
+    const scheduleName = document.createElement("p");
+    scheduleName.setAttribute("class", "schedule-name");
+    scheduleName.setAttribute("id", schedule.id);
+    scheduleName.innerText = schedule.name;
+    return scheduleName;
+  });
+  schedulesList.append(...list);
+}
 
 interface DisplayScheduleInEditor {
   id: string;
   schedules: ISchedule<IOperation>[];
 }
-
 export function displayScheduleInEditor({
   id = "",
   schedules = []

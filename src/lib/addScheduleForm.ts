@@ -1,6 +1,8 @@
 import createId from "./createId.js";
 import { Schedule, Operation } from "./classes.js";
 import { IOperation } from "./definitions.js";
+import schedules from "../database/schedules.js";
+import { displaySchedulesNames } from "./display.js";
 
 export function initScheduleForm() {
   const select = document.querySelector(
@@ -137,6 +139,13 @@ function submitForm(e: Event) {
     name: scheduleName,
     operations: operations
   });
+  schedules.push(schedule);
+  displaySchedulesNames(schedules);
+  console.log("schedules", schedules);
+}
+
+export function newSchedule() {
+  return schedules;
 }
 
 interface FormGetter {
