@@ -36,6 +36,7 @@ function createInput({ id, name, type }: Input) {
     input = document.createElement("input");
     input.type = type;
   }
+  input.required = true;
   input.id = `${name}-${id}`;
   input.name = `${name}-${id}`;
   return input;
@@ -49,7 +50,9 @@ function buildOperationsForm(e: Event) {
   const operationDuration = "operation-duration";
 
   for (let i = 1; i <= nrOperations; i++) {
-    const form = document.querySelector(".operations-form") as HTMLFormElement;
+    const form = document.querySelector(
+      ".operations-form-dynamic-content"
+    ) as HTMLFormElement;
     const inputGroup = createInputGroup("input-group");
     const operationNameLabel = createLabel({
       id: i,
@@ -76,7 +79,7 @@ function buildOperationsForm(e: Event) {
     const operationDurationLabel = createLabel({
       id: i,
       name: operationDuration,
-      text: "Duration"
+      text: "Duration in seconds"
     });
     const operationDurationInput = createInput({
       id: i,
