@@ -1,4 +1,5 @@
 import createId from "./createId.js";
+import { Schedule, Operation } from "./classes.js";
 
 export function initScheduleForm() {
   const select = document.querySelector(
@@ -113,9 +114,18 @@ function submitForm(e: Event) {
     form.querySelector("[name=nr-operations]") as HTMLInputElement
   ).value;
 
-  const operationName = "operation-name";
   const operationDescription = "operation-description";
   const operationDuration = "operation-duration";
 
-  for (let i = 1; i <= Number(nrOperations); i++) {}
+  for (let i = 1; i <= Number(nrOperations); i++) {
+    const operationName = getOperationName(i, form);
+  }
+}
+
+function getOperationName(id: number, form: HTMLFormElement) {
+  const operationName = "operation-name";
+  const operationNameValue = (
+    form.querySelector(`[name=${operationName}-${id}]`) as HTMLInputElement
+  ).value;
+  return operationNameValue;
 }
