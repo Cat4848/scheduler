@@ -9,6 +9,7 @@ function openModal() {
 }
 
 function closeModal() {
+  console.log("click");
   const attributes = ".modal,.overlay";
   const visibleElements = customQuerySelector(attributes);
   visibleElements.forEach((element) => {
@@ -17,7 +18,8 @@ function closeModal() {
 }
 
 export function initModal() {
-  const attributes = ".btn-open-modal,.btn-close-modal,.overlay";
+  const attributes =
+    ".btn-open-modal,.btn-close-modal,.overlay,#btn-submit-form";
   const modalButtons = customQuerySelector(attributes);
   modalButtons.forEach((element) => {
     if (element) {
