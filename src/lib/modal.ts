@@ -21,7 +21,7 @@ export function initModal() {
   const modalButtons = customQuerySelector(attributes);
   modalButtons.forEach((element) => {
     if (element) {
-      const classes = element.classList.value;
+      const classes = element.className;
       if (classes.includes("open")) {
         element.addEventListener("click", openModal);
       } else {
