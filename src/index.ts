@@ -27,6 +27,7 @@ function displaySchedulesNames(schedules: ISchedule<IOperation>[]) {
 }
 
 function attachEventHandlerOnViewScheduleNames() {
+  
   const schedulesList = document.querySelectorAll(".schedule-name");
 
   if (schedulesList !== null) {
