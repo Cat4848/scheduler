@@ -1,3 +1,5 @@
+import createId from "./createId.js";
+
 export function initScheduleForm() {
   const select = document.querySelector(
     ".select-nr-operations"
@@ -110,4 +112,10 @@ function submitForm(e: Event) {
   const nrOperations = (
     form.querySelector("[name=nr-operations]") as HTMLInputElement
   ).value;
+
+  const operationName = "operation-name";
+  const operationDescription = "operation-description";
+  const operationDuration = "operation-duration";
+
+  for (let i = 1; i <= Number(nrOperations); i++) {}
 }
