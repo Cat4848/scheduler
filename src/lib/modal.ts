@@ -17,7 +17,7 @@ function closeModal() {
 }
 
 export function initModal() {
-  const attributes = ".btn-open-modal,.btn-close-modal";
+  const attributes = ".btn-open-modal,.btn-close-modal,.overlay";
   const modalButtons = customQuerySelector(attributes);
   modalButtons.forEach((element) => {
     if (element) {
