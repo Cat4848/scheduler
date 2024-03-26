@@ -9,6 +9,10 @@
   </head>
   <body>
     <main>
+      <!-- Modal Overlay-->
+      <div class="overlay hidden"></div>
+      <!-- Modal Overlay-->
+
       <div class="wrapper">
         <section class="actions">
           <h1>Action Buttons</h1>
@@ -19,7 +23,9 @@
             <h1>Schedule Viewer</h1>
 
             <div class="viewer-action-buttons">
+
               <div class="overlay hidden"></div>
+
               <button type="button" class="btn btn-primary btn-open-modal">
                 Add Schedule
               </button>
@@ -27,6 +33,12 @@
                 Delete Schedule
               </button>
             </div>
+
+            <!--Add Schedule Modal: Start-->
+            <section class="modal hidden">
+              <div class="modal-title">
+                <h3>Add Schedule</h3>
+                <button class="btn-close-modal">X</button>
 
             <section class="modal hidden">
               <div class="modal-title">
@@ -36,6 +48,7 @@
               <div>
                 <h4>New Schedule Info</h4>
               </div>
+              <form action="" class="operations-form">
               <form action="">
                 <div class="input-group">
                   <label for="input-schedule-name">Name</label>
@@ -43,6 +56,35 @@
                     type="text"
                     id="input-schedule-name"
                     name="schedule-name"
+                    required
+                  />
+                </div>
+                <h5>Operations</h5>
+                <div class="input-group">
+                  <label for="nr-operations">Select Number of Operations</label>
+                  <select
+                    name="nr-operations"
+                    id="nr-operations"
+                    class="select-nr-operations"
+                  >
+                    <option value="">-- Operations --</option>
+                    <option value="1">1</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+                <div class="operations-form-dynamic-content"></div>
+                <button type="submit" id="btn-submit-form" class="btn">
+                  Add New Schedule
+                </button>
+              </form>
+            </section>
+            <!--Add Schedule Modal: End-->
                   />
                 </div>
                 <h5>Operations</h5>

@@ -1,10 +1,14 @@
 import schedules from "./database/schedules.js";
 import { ISchedule, IOperation } from "./lib/definitions";
 import { displayScheduleInEditor } from "./lib/eventHandlers/viewer/evHanViewer.js";
+import { initModal } from "./lib/modal.js";
+import { initScheduleForm } from "./lib/addScheduleForm.js";
 
 window.onload = () => {
   displaySchedulesNames(schedules);
   attachEventHandlerOnViewScheduleNames();
+  initModal();
+  initScheduleForm();
 };
 
 function displaySchedulesNames(schedules: ISchedule<IOperation>[]) {
