@@ -1,11 +1,11 @@
-export function openModal() {
-  const modal = document.querySelector(".modal");
-  const overlay = document.querySelector(".overlay");
+import customQuerySelector from "./querySelector.js";
 
-  if (modal !== null && overlay !== null) {
-    modal.classList.remove("hidden");
-    overlay.classList.remove("hidden");
-  }
+export function openModal() {
+  const attributes = ".modal,.overlay";
+  const hiddenElements = customQuerySelector(attributes);
+  hiddenElements.forEach((element) => {
+    if (element) element.classList.remove("hidden");
+  });
 }
 
 export function closeModal() {
