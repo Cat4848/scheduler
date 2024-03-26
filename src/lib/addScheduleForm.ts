@@ -1,8 +1,10 @@
-export function addScheduleForm() {
+export function initScheduleForm() {
   const select = document.querySelector(
     ".select-nr-operations"
   ) as HTMLSelectElement;
+  const opForm = document.querySelector(".operations-form") as HTMLFormElement;
   select.addEventListener("change", buildOperationsForm);
+  opForm.onsubmit = submitForm;
 }
 
 function createInputGroup(name: string) {
@@ -48,11 +50,12 @@ function buildOperationsForm(e: Event) {
   const operationName = "operation-name";
   const operationDescription = "operation-description";
   const operationDuration = "operation-duration";
+  const form = document.querySelector(
+    ".operations-form-dynamic-content"
+  ) as HTMLFormElement;
+  form.innerHTML = "";
 
   for (let i = 1; i <= nrOperations; i++) {
-    const form = document.querySelector(
-      ".operations-form-dynamic-content"
-    ) as HTMLFormElement;
     const inputGroup = createInputGroup("input-group");
     const operationNameLabel = createLabel({
       id: i,
@@ -97,4 +100,14 @@ function buildOperationsForm(e: Event) {
     );
     form.append(inputGroup);
   }
+}
+
+function submitForm(e: Event) {
+  e.preventDefault();
+  e.stopPropagation();
+  const form = e.target as HTMLFormElement;
+
+  const nrOperations = (
+    form.querySelector("[name=nr-operations]") as HTMLInputElement
+  ).value;
 }
