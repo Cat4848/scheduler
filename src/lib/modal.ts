@@ -9,7 +9,6 @@ function openModal() {
 }
 
 function closeModal() {
-  console.log("click");
   const attributes = ".modal,.overlay";
   const visibleElements = customQuerySelector(attributes);
   visibleElements.forEach((element) => {

@@ -6,28 +6,31 @@ import {
   getOperationDuration
 } from "./getters.js";
 import { Schedule, Operation } from "./classes.js";
-import { IOperation } from "./definitions.js";
+import { IOperation, ISchedule } from "./definitions.js";
 import schedules from "../database/schedules.js";
 import { displaySchedulesNames } from "./display.js";
 import { attachEventHandlerOnViewScheduleNames } from "../index.js";
+
+const operationName = "operation-name";
+const operationDescription = "operation-description";
+const operationDuration = "operation-duration";
 
 export function initScheduleForm() {
   const select = document.querySelector(
     ".select-nr-operations"
   ) as HTMLSelectElement;
   select.addEventListener("change", buildOperationsForm);
-  const opForm = document.querySelector(".operations-form") as HTMLFormElement;
-  opForm.onsubmit = submitForm;
+  const scheduleForm = document.querySelector(
+    ".schedule-form"
+  ) as HTMLFormElement;
+  scheduleForm.onsubmit = submitForm;
 }
 
 function buildOperationsForm(e: Event) {
   const operationsValue = (e.target as HTMLSelectElement).value;
   const nrOperations = Number(operationsValue);
-  const operationName = "operation-name";
-  const operationDescription = "operation-description";
-  const operationDuration = "operation-duration";
   const form = document.querySelector(
-    ".operations-form-dynamic-content"
+    ".schedule-form-dynamic-content"
   ) as HTMLFormElement;
   form.innerHTML = "";
 
@@ -92,14 +95,26 @@ function submitForm(e: Event) {
   const operations: IOperation[] = [];
 
   for (let i = 1; i <= Number(nrOperations); i++) {
-    const operationName = getOperationName({ id: i, form });
-    const operationDescription = getOperationDescription({ id: i, form });
-    const operationDuration = getOperationDuration({ id: i, form });
+    const operationNameValue = getOperationName({
+      id: i,
+      name: operationName,
+      form
+    });
+    const operationDescriptionValue = getOperationDescription({
+      id: i,
+      name: operationDescription,
+      form
+    });
+    const operationDurationValue = getOperationDuration({
+      id: i,
+      name: operationDuration,
+      form
+    });
     const operation = new Operation({
       id: createId(),
-      name: operationName,
-      description: operationDescription,
-      duration: operationDuration
+      name: operationNameValue,
+      description: operationDescriptionValue,
+      duration: operationDurationValue
     });
 
     operations.push(operation);
@@ -110,6 +125,10 @@ function submitForm(e: Event) {
     operations: operations
   });
   schedules.push(schedule);
+  updateSchedules(schedules);
+}
+
+function updateSchedules(schedules: ISchedule<IOperation>[]) {
   displaySchedulesNames(schedules);
   attachEventHandlerOnViewScheduleNames();
 }

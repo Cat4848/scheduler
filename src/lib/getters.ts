@@ -1,30 +1,26 @@
 interface FormGetter {
   id: number;
+  name: string;
   form: HTMLFormElement;
 }
 
-export function getOperationName({ id, form }: FormGetter) {
-  const operationName = "operation-name";
+export function getOperationName({ id, name, form }: FormGetter) {
   const operationNameValue = (
-    form.querySelector(`[name=${operationName}-${id}]`) as HTMLInputElement
+    form.querySelector(`[name=${name}-${id}]`) as HTMLInputElement
   ).value;
   return operationNameValue;
 }
 
-export function getOperationDescription({ id, form }: FormGetter) {
-  const operationDescription = "operation-description";
+export function getOperationDescription({ id, name, form }: FormGetter) {
   const operationDescriptionValue = (
-    form.querySelector(
-      `[name=${operationDescription}-${id}]`
-    ) as HTMLTextAreaElement
+    form.querySelector(`[name=${name}-${id}]`) as HTMLTextAreaElement
   ).value;
   return operationDescriptionValue;
 }
 
-export function getOperationDuration({ id, form }: FormGetter) {
-  const operationDuration = "operation-duration";
+export function getOperationDuration({ id, name, form }: FormGetter) {
   const operationDurationValue = (
-    form.querySelector(`[name=${operationDuration}-${id}]`) as HTMLInputElement
+    form.querySelector(`[name=${name}-${id}]`) as HTMLInputElement
   ).value;
   return Number(operationDurationValue) * 1000;
 }
