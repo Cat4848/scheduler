@@ -37,4 +37,6 @@
 
 .hidden {
   display: none;
+  position: absolute;
+  top: 20%;
 }
