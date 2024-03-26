@@ -1,5 +1,6 @@
 import createId from "./createId.js";
 import { Schedule, Operation } from "./classes.js";
+import { IOperation } from "./definitions.js";
 
 export function initScheduleForm() {
   const select = document.querySelector(
@@ -113,19 +114,58 @@ function submitForm(e: Event) {
   const nrOperations = (
     form.querySelector("[name=nr-operations]") as HTMLInputElement
   ).value;
-
-  const operationDescription = "operation-description";
-  const operationDuration = "operation-duration";
+  const scheduleName = (
+    form.querySelector(`[name=schedule-name]`) as HTMLInputElement
+  ).value;
+  const operations: IOperation[] = [];
 
   for (let i = 1; i <= Number(nrOperations); i++) {
-    const operationName = getOperationName(i, form);
+    const operationName = getOperationName({ id: i, form });
+    const operationDescription = getOperationDescription({ id: i, form });
+    const operationDuration = getOperationDuration({ id: i, form });
+    const operation = new Operation({
+      id: createId(),
+      name: operationName,
+      description: operationDescription,
+      duration: operationDuration
+    });
+
+    operations.push(operation);
   }
+  const schedule = new Schedule({
+    id: createId(),
+    name: scheduleName,
+    operations: operations
+  });
 }
 
-function getOperationName(id: number, form: HTMLFormElement) {
+interface FormGetter {
+  id: number;
+  form: HTMLFormElement;
+}
+
+function getOperationName({ id, form }: FormGetter) {
   const operationName = "operation-name";
   const operationNameValue = (
     form.querySelector(`[name=${operationName}-${id}]`) as HTMLInputElement
   ).value;
   return operationNameValue;
+}
+
+function getOperationDescription({ id, form }: FormGetter) {
+  const operationDescription = "operation-description";
+  const operationDescriptionValue = (
+    form.querySelector(
+      `[name=${operationDescription}-${id}]`
+    ) as HTMLTextAreaElement
+  ).value;
+  return operationDescriptionValue;
+}
+
+function getOperationDuration({ id, form }: FormGetter) {
+  const operationDuration = "operation-duration";
+  const operationDurationValue = (
+    form.querySelector(`[name=${operationDuration}-${id}]`) as HTMLInputElement
+  ).value;
+  return Number(operationDurationValue) * 1000;
 }
