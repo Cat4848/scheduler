@@ -13,14 +13,14 @@ window.onload = () => {
   initScheduleForm();
 };
 
-function attachEventHandlerOnViewScheduleNames() {
-  const schedulesList = document.querySelectorAll(".schedule-name");
+export function attachEventHandlerOnViewScheduleNames() {
+  const schedulesList = document.querySelectorAll(
+    ".schedule-name"
+  ) as NodeListOf<HTMLParagraphElement>;
 
-  if (schedulesList !== null) {
-    schedulesList.forEach((schedule) => {
-      schedule.addEventListener("click", () => {
-        displayScheduleInEditor({ id: schedule.id, schedules: schedules });
-      });
+  schedulesList.forEach((schedule) => {
+    schedule.addEventListener("click", () => {
+      displayScheduleInEditor({ id: schedule.id, schedules: schedules });
     });
-  }
+  });
 }

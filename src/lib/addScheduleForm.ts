@@ -1,53 +1,23 @@
 import createId from "./createId.js";
+import { createInputGroup, createInput, createLabel } from "./creators.js";
+import {
+  getOperationName,
+  getOperationDescription,
+  getOperationDuration
+} from "./getters.js";
 import { Schedule, Operation } from "./classes.js";
 import { IOperation } from "./definitions.js";
 import schedules from "../database/schedules.js";
 import { displaySchedulesNames } from "./display.js";
+import { attachEventHandlerOnViewScheduleNames } from "../index.js";
 
 export function initScheduleForm() {
   const select = document.querySelector(
     ".select-nr-operations"
   ) as HTMLSelectElement;
-  const opForm = document.querySelector(".operations-form") as HTMLFormElement;
   select.addEventListener("change", buildOperationsForm);
+  const opForm = document.querySelector(".operations-form") as HTMLFormElement;
   opForm.onsubmit = submitForm;
-}
-
-function createInputGroup(name: string) {
-  const wrapper = document.createElement("div");
-  wrapper.className = name;
-  return wrapper;
-}
-
-interface Label {
-  id: number;
-  name: string;
-  text: string;
-}
-function createLabel({ id, name, text }: Label) {
-  const label = document.createElement("label");
-  label.innerText = text;
-  label.htmlFor = `${name}-${id}`;
-  return label;
-}
-
-interface Input {
-  id: number;
-  name: string;
-  type: string;
-}
-function createInput({ id, name, type }: Input) {
-  let input: HTMLInputElement | HTMLTextAreaElement;
-  if (type === "textarea") {
-    input = document.createElement("textarea");
-  } else {
-    input = document.createElement("input");
-    input.type = type;
-  }
-  input.required = true;
-  input.id = `${name}-${id}`;
-  input.name = `${name}-${id}`;
-  return input;
 }
 
 function buildOperationsForm(e: Event) {
@@ -141,40 +111,5 @@ function submitForm(e: Event) {
   });
   schedules.push(schedule);
   displaySchedulesNames(schedules);
-  console.log("schedules", schedules);
-}
-
-export function newSchedule() {
-  return schedules;
-}
-
-interface FormGetter {
-  id: number;
-  form: HTMLFormElement;
-}
-
-function getOperationName({ id, form }: FormGetter) {
-  const operationName = "operation-name";
-  const operationNameValue = (
-    form.querySelector(`[name=${operationName}-${id}]`) as HTMLInputElement
-  ).value;
-  return operationNameValue;
-}
-
-function getOperationDescription({ id, form }: FormGetter) {
-  const operationDescription = "operation-description";
-  const operationDescriptionValue = (
-    form.querySelector(
-      `[name=${operationDescription}-${id}]`
-    ) as HTMLTextAreaElement
-  ).value;
-  return operationDescriptionValue;
-}
-
-function getOperationDuration({ id, form }: FormGetter) {
-  const operationDuration = "operation-duration";
-  const operationDurationValue = (
-    form.querySelector(`[name=${operationDuration}-${id}]`) as HTMLInputElement
-  ).value;
-  return Number(operationDurationValue) * 1000;
+  attachEventHandlerOnViewScheduleNames();
 }
