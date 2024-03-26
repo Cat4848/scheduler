@@ -9,7 +9,9 @@
   </head>
   <body>
     <main>
+      <!-- Modal Overlay-->
       <div class="overlay hidden"></div>
+      <!-- Modal Overlay-->
       <div class="wrapper">
         <section class="actions">
           <h1>Action Buttons</h1>
@@ -46,16 +48,22 @@
                   />
                 </div>
                 <h5>Operations</h5>
-                <select name="select-nr-operations" id="nr-operations">
-                  <option value="">-- Number of operations --</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                </select>
+                <div class="input-group">
+                  <label for="nr-operations">Select Number of Operations</label>
+                  <select
+                    name="nr-operations"
+                    id="nr-operations"
+                    class="select-nr-operations"
+                  >
+                    <option value="4" selected>4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
                 <button type="submit" class="btn">Add Schedule</button>
               </form>
             </section>
