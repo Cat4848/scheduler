@@ -17,11 +17,17 @@ function closeModal() {
 }
 
 export function initModal() {
-  const openModalButton = document.querySelector(".btn-open-modal");
-  const closeModalButton = document.querySelector(".btn-close-modal");
-
-  if (openModalButton !== null && closeModalButton !== null) {
-    openModalButton.addEventListener("click", openModal);
-    closeModalButton.addEventListener("click", closeModal);
-  }
+  const attributes = ".btn-open-modal,.btn-close-modal";
+  const modalButtons = customQuerySelector(attributes);
+  modalButtons.forEach((element) => {
+    if (element) {
+      const classes = element.classList.value;
+      if (classes.includes("open")) {
+        element.addEventListener("click", openModal);
+      } else {
+        element.addEventListener("click", closeModal);
+      }
+      console.log("classes", classes);
+    }
+  });
 }
