@@ -27,7 +27,6 @@ export function initModal() {
       } else {
         element.addEventListener("click", closeModal);
       }
-      console.log("classes", classes);
     }
   });
 }
