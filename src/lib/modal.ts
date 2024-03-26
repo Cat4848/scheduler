@@ -1,6 +1,6 @@
 import customQuerySelector from "./querySelector.js";
 
-export function openModal() {
+function openModal() {
   const attributes = ".modal,.overlay";
   const hiddenElements = customQuerySelector(attributes);
   hiddenElements.forEach((element) => {
@@ -8,7 +8,7 @@ export function openModal() {
   });
 }
 
-export function closeModal() {
+function closeModal() {
   const modal = document.querySelector(".modal");
   const overlay = document.querySelector(".overlay");
 
@@ -18,7 +18,7 @@ export function closeModal() {
   }
 }
 
-function initModal() {
+export function initModal() {
   const openModalButton = document.querySelector(".btn-open-modal");
   const closeModalButton = document.querySelector(".btn-close-modal");
 
