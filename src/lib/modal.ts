@@ -9,13 +9,11 @@ function openModal() {
 }
 
 function closeModal() {
-  const modal = document.querySelector(".modal");
-  const overlay = document.querySelector(".overlay");
-
-  if (modal !== null && overlay !== null) {
-    modal.classList.add("hidden");
-    overlay.classList.add("hidden");
-  }
+  const attributes = ".modal,.overlay";
+  const visibleElements = customQuerySelector(attributes);
+  visibleElements.forEach((element) => {
+    if (element) element.classList.add("hidden");
+  });
 }
 
 export function initModal() {
