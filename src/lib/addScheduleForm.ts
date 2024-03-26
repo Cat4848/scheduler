@@ -29,8 +29,13 @@ interface Input {
   type: string;
 }
 function createInput({ id, name, type }: Input) {
-  const input = document.createElement("input");
-  input.type = type;
+  let input: HTMLInputElement | HTMLTextAreaElement;
+  if (type === "textarea") {
+    input = document.createElement("textarea");
+  } else {
+    input = document.createElement("input");
+    input.type = type;
+  }
   input.id = `${name}-${id}`;
   input.name = `${name}-${id}`;
   return input;
@@ -39,27 +44,54 @@ function createInput({ id, name, type }: Input) {
 function buildOperationsForm(e: Event) {
   const operationsValue = (e.target as HTMLSelectElement).value;
   const nrOperations = Number(operationsValue);
-  const name = "schedule-operation";
+  const operationName = "operation-name";
+  const operationDescription = "operation-description";
+  const operationDuration = "operation-duration";
 
   for (let i = 1; i <= nrOperations; i++) {
     const form = document.querySelector(".operations-form") as HTMLFormElement;
     const inputGroup = createInputGroup("input-group");
-    const label = createLabel({
+    const operationNameLabel = createLabel({
       id: i,
-      name: name,
+      name: operationName,
       text: "Name"
     });
-    const description = createInput({
+    const operationNameInput = createInput({
       id: i,
-      name: name,
+      name: operationName,
       type: "text"
     });
-    const duration = createInput({
+
+    const operationDescriptionLabel = createLabel({
       id: i,
-      name: name,
+      name: operationDescription,
+      text: "Description"
+    });
+    const operationDescriptionInput = createInput({
+      id: i,
+      name: operationDescription,
+      type: "textarea"
+    });
+
+    const operationDurationLabel = createLabel({
+      id: i,
+      name: operationDuration,
+      text: "Duration"
+    });
+    const operationDurationInput = createInput({
+      id: i,
+      name: operationDuration,
       type: "number"
     });
-    inputGroup.append(label, description, duration);
+
+    inputGroup.append(
+      operationNameLabel,
+      operationNameInput,
+      operationDescriptionLabel,
+      operationDescriptionInput,
+      operationDurationLabel,
+      operationDurationInput
+    );
     form.append(inputGroup);
   }
 }
