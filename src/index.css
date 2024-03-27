@@ -55,7 +55,8 @@ a {
   width: 25rem;
 }
 
-hr {
+hr,
+h4 {
   margin-bottom: 1rem;
 }
 
