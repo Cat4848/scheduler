@@ -1,5 +1,6 @@
 @import "./styles/variables.css";
 @import "./styles/modal.css";
+@import "./styles//buttons.css";
 
 * {
   box-sizing: border-box;
