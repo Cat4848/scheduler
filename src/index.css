@@ -39,16 +39,15 @@ a {
 
 .panel {
   border-radius: 15px;
-  padding: 0.3rem;
+  padding: 0.8rem;
   background-color: var(--color-background-panel);
+  height: 30rem;
 }
 
 .viewer {
-  border: 2px solid green;
-  min-width: 5rem;
+  width: 19rem;
 }
 
 .editor {
-  border: 2px solid green;
-  min-width: 10rem;
+  width: 25rem;
 }
