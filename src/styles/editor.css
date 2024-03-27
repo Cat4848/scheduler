@@ -1,0 +1,10 @@
+.editor-schedule-name-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editor-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
