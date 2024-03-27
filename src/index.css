@@ -38,10 +38,13 @@ a {
 }
 
 .panel {
-  border-radius: 15px;
-  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   background-color: var(--color-background-panel);
   height: 30rem;
+  border-radius: 15px;
+  padding: 0.8rem;
 }
 
 .viewer {
@@ -50,4 +53,12 @@ a {
 
 .editor {
   width: 25rem;
+}
+
+hr {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  text-align: center;
 }
