@@ -7,17 +7,11 @@ export function displaySchedulesNames(schedules: ISchedule<IOperation>[]) {
   schedulesList.innerHTML = "";
 
   const list = schedules.map((schedule) => {
-    const scheduleName = document.createElement("input");
-    scheduleName.type = "checkbox";
+    const scheduleName = document.createElement("p");
     scheduleName.className = "schedule-name";
     scheduleName.id = schedule.id;
-
-    const label = document.createElement("label");
-    label.htmlFor = schedule.id;
-    label.innerText = `• ${schedule.name}`;
-
-    label.append(scheduleName);
-    return label;
+    scheduleName.innerText = `• ${schedule.name}`;
+    return scheduleName;
   });
   schedulesList.append(...list);
 }
@@ -52,6 +46,15 @@ export function displayScheduleInEditor({
   editor.append(...operationsElements);
 }
 
-function displayScheduleSelector(schedule: HTMLParagraphElement) {
-  schedule.classList;
+export function displayScheduleSelector(e: Event) {
+  const schedulesName = document.querySelectorAll(
+    ".schedule-name"
+  ) as NodeListOf<HTMLParagraphElement>;
+
+  schedulesName.forEach((schedule) => {
+    schedule.classList.remove("schedule-name-selected");
+  });
+
+  const clickedSchedule = e.target as HTMLParagraphElement;
+  clickedSchedule.classList.add("schedule-name-selected");
 }

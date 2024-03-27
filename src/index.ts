@@ -1,11 +1,11 @@
 import schedules from "./database/schedules.js";
 import {
   displaySchedulesNames,
-  displayScheduleInEditor
+  displayScheduleInEditor,
+  displayScheduleSelector
 } from "./lib/display.js";
 import { initModal } from "./lib/modal.js";
 import { initScheduleForm } from "./lib/scheduleForm.js";
-
 window.onload = () => {
   displaySchedulesNames(schedules);
   attachEventHandlerOnViewScheduleNames();
@@ -19,8 +19,9 @@ export function attachEventHandlerOnViewScheduleNames() {
   ) as NodeListOf<HTMLParagraphElement>;
 
   schedulesList.forEach((schedule) => {
-    schedule.addEventListener("click", () => {
+    schedule.addEventListener("click", (e) => {
       displayScheduleInEditor({ id: schedule.id, schedules: schedules });
+      displayScheduleSelector(e);
     });
   });
 }

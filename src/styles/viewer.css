@@ -5,8 +5,11 @@
 .schedule-name {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  cursor: default;
+  padding: 0.5rem;
 }
 
-.schedule-name::selection {
-  background-color: aqua;
+.schedule-name-selected {
+  background-color: rgb(215, 216, 219);
+  font-weight: 550;
 }
