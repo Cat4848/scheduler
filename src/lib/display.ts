@@ -8,8 +8,8 @@ export function displaySchedulesNames(schedules: ISchedule<IOperation>[]) {
 
   const list = schedules.map((schedule) => {
     const scheduleName = document.createElement("p");
-    scheduleName.setAttribute("class", "schedule-name");
-    scheduleName.setAttribute("id", schedule.id);
+    scheduleName.className = "schedule-name";
+    scheduleName.id = schedule.id;
     scheduleName.innerText = `• ${schedule.name}`;
     return scheduleName;
   });

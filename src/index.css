@@ -1,6 +1,7 @@
 @import "./styles/variables.css";
 @import "./styles/modal.css";
 @import "./styles//buttons.css";
+@import "./styles/viewer.css";
 
 * {
   box-sizing: border-box;
@@ -45,10 +46,6 @@ a {
   height: 30rem;
   border-radius: 15px;
   padding: 0.8rem;
-}
-
-.viewer {
-  width: 19rem;
 }
 
 .editor {
