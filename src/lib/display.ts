@@ -10,7 +10,7 @@ export function displaySchedulesNames(schedules: ISchedule<IOperation>[]) {
     const scheduleName = document.createElement("p");
     scheduleName.setAttribute("class", "schedule-name");
     scheduleName.setAttribute("id", schedule.id);
-    scheduleName.innerText = schedule.name;
+    scheduleName.innerText = `• ${schedule.name}`;
     return scheduleName;
   });
   schedulesList.append(...list);
