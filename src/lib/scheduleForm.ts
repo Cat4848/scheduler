@@ -1,5 +1,10 @@
 import createId from "./createId.js";
-import { createInputGroup, createInput, createLabel } from "./creators.js";
+import {
+  createInputGroup,
+  createHeading,
+  createInput,
+  createLabel
+} from "./creators.js";
 import {
   getOperationName,
   getOperationDescription,
@@ -36,6 +41,7 @@ function buildOperationsForm(e: Event) {
 
   for (let i = 1; i <= nrOperations; i++) {
     const inputGroup = createInputGroup("input-group");
+    const operationHeading = createHeading(i);
     const operationNameLabel = createLabel({
       id: i,
       name: operationName,
@@ -70,6 +76,7 @@ function buildOperationsForm(e: Event) {
     });
 
     inputGroup.append(
+      operationHeading,
       operationNameLabel,
       operationNameInput,
       operationDescriptionLabel,

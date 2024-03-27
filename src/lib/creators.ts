@@ -4,6 +4,12 @@ export function createInputGroup(name: string) {
   return wrapper;
 }
 
+export function createHeading(id: number) {
+  const operationHeading = document.createElement("h6");
+  operationHeading.innerText = `Operation ${id}`;
+  return operationHeading;
+}
+
 interface Label {
   id: number;
   name: string;

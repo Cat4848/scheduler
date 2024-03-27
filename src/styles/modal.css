@@ -40,3 +40,8 @@
   position: absolute;
   top: 20%;
 }
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
