@@ -5,7 +5,7 @@ export function createInputGroup(name: string) {
 }
 
 export function createHeading(id: number) {
-  const operationHeading = document.createElement("h6");
+  const operationHeading = document.createElement("h4");
   operationHeading.innerText = `Operation ${id}`;
   return operationHeading;
 }
