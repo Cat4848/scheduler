@@ -7,3 +7,8 @@
   border-radius: 5px;
   text-align: center;
 }
+
+.btn-danger {
+  background-color: red;
+  color: black;
+}
