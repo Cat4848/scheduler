@@ -11,6 +11,7 @@ export function displaySchedulesNames(schedules: ISchedule<IOperation>[]) {
     scheduleName.className = "schedule-name";
     scheduleName.id = schedule.id;
     scheduleName.innerText = `• ${schedule.name}`;
+    scheduleName.setAttribute("data-testid", "schedule-name-test-id");
     return scheduleName;
   });
   schedulesList.append(...list);
