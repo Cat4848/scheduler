@@ -8,3 +8,9 @@
   flex-direction: column;
   gap: 0.3rem;
 }
+
+.operation-title {
+  font-weight: 700;
+  color: rgb(86, 86, 86);
+  margin-right: 0.4rem;
+}

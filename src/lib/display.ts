@@ -36,11 +36,14 @@ export function displayScheduleInEditor({
   scheduleName.textContent = schedule.name;
 
   const operationsElements = operations.map((operation) => {
-    const operationDescription = document.createElement("p");
-    operationDescription.setAttribute("class", "operation-description");
-    operationDescription.setAttribute("id", operation.id);
-    operationDescription.innerText = `${operation.name} ${operation.description}`;
-    return operationDescription;
+    const wrapper = document.createElement("div");
+    const operationTitle = document.createElement("span");
+    operationTitle.textContent = `${operation.name}:`;
+    operationTitle.className = "operation-title";
+    const operationDescription = document.createElement("span");
+    operationDescription.textContent = operation.description;
+    wrapper.append(operationTitle, operationDescription);
+    return wrapper;
   });
 
   editor.append(...operationsElements);
