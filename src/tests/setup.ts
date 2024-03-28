@@ -109,3 +109,13 @@ export function setupWithSchedules() {
   const user = userEvent.setup();
   return user;
 }
+
+export async function setupWithModal() {
+  setup();
+  const user = userEvent.setup();
+  const addScheduleButton = document.querySelector(
+    "#btn-open-modal"
+  ) as HTMLButtonElement;
+  await user.click(addScheduleButton);
+  return user;
+}
