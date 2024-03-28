@@ -1,4 +1,4 @@
-import customQuerySelector from "./querySelector.js";
+import customQuerySelector from "./querySelector";
 
 function openModal() {
   const attributes = ".modal,.overlay";
@@ -9,7 +9,6 @@ function openModal() {
 }
 
 function closeModal() {
-  console.log("click");
   const attributes = ".modal,.overlay";
   const visibleElements = customQuerySelector(attributes);
   visibleElements.forEach((element) => {

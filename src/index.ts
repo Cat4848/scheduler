@@ -1,39 +1,30 @@
-import schedules from "./database/schedules.js";
-import { ISchedule, IOperation } from "./lib/definitions";
-import { displayScheduleInEditor } from "./lib/eventHandlers/viewer/evHanViewer.js";
-import { initModal } from "./lib/modal.js";
-import { initScheduleForm } from "./lib/addScheduleForm.js";
+import schedules from "./database/schedules";
+import {
+  displaySchedulesNames,
+  displayScheduleInEditor,
+  displayScheduleSelector
+} from "./lib/display";
+import { initModal } from "./lib/modal";
+import { initScheduleForm } from "./features/addSchedule/addSchedule";
+import { initDeleteSchedule } from "./features/deleteSchedule";
 
 window.onload = () => {
   displaySchedulesNames(schedules);
   attachEventHandlerOnViewScheduleNames();
   initModal();
   initScheduleForm();
+  initDeleteSchedule();
 };
 
-function displaySchedulesNames(schedules: ISchedule<IOperation>[]) {
-  const schedulesList = document.querySelector(".viewer-schedule-list");
+export function attachEventHandlerOnViewScheduleNames() {
+  const schedulesList = document.querySelectorAll(
+    ".schedule-name"
+  ) as NodeListOf<HTMLParagraphElement>;
 
-  if (schedulesList !== null) {
-    const list = schedules.map((schedule) => {
-      const scheduleName = document.createElement("p");
-      scheduleName.setAttribute("class", "schedule-name");
-      scheduleName.setAttribute("id", schedule.id);
-      scheduleName.innerText = schedule.name;
-      return scheduleName;
+  schedulesList.forEach((schedule) => {
+    schedule.addEventListener("click", (e) => {
+      displayScheduleInEditor({ id: schedule.id, schedules: schedules });
+      displayScheduleSelector(e);
     });
-    schedulesList.append(...list);
-  }
-}
-
-function attachEventHandlerOnViewScheduleNames() {
-  const schedulesList = document.querySelectorAll(".schedule-name");
-
-  if (schedulesList !== null) {
-    schedulesList.forEach((schedule) => {
-      schedule.addEventListener("click", () => {
-        displayScheduleInEditor({ id: schedule.id, schedules: schedules });
-      });
-    });
-  }
+  });
 }

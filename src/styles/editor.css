@@ -1,0 +1,16 @@
+.editor-schedule-name-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editor-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.operation-title {
+  font-weight: 700;
+  color: rgb(86, 86, 86);
+  margin-right: 0.4rem;
+}

@@ -1,0 +1,18 @@
+.message {
+  display: inline-block;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 0 0.9rem;
+}
+
+.message-success {
+  background-color: var(--color-success);
+}
+
+.message-error {
+  background-color: var(--color-danger);
+}
+
+.message-warning {
+  background-color: var(--color-warning);
+}
