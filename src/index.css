@@ -3,6 +3,7 @@
 @import "./styles//buttons.css";
 @import "./styles/viewer.css";
 @import "./styles//editor.css";
+@import "./styles/message.css";
 
 * {
   box-sizing: border-box;
@@ -27,6 +28,7 @@ a {
   flex-direction: column;
   gap: 2em;
   max-width: 100vw;
+  padding: 1rem;
 }
 
 .scheduler {

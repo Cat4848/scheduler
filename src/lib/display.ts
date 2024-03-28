@@ -61,3 +61,19 @@ export function displayScheduleSelector(e: Event) {
   const clickedSchedule = e.target as HTMLParagraphElement;
   clickedSchedule.classList.add("schedule-name-selected");
 }
+
+export function displaySchNames(schedules: HTMLParagraphElement[]) {
+  const schedulesList = document.querySelector(
+    ".viewer-schedule-list"
+  ) as HTMLDivElement;
+  schedulesList.innerHTML = "";
+
+  const list = schedules.map((schedule) => {
+    const scheduleName = document.createElement("p");
+    scheduleName.className = "schedule-name";
+    scheduleName.id = schedule.id;
+    scheduleName.innerText = `• ${schedule.innerText}`;
+    return scheduleName;
+  });
+  schedulesList.append(...list);
+}

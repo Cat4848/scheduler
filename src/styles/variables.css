@@ -1,4 +1,8 @@
 :root {
   --color-background-main: hsl(0, 0%, 95%);
   --color-background-panel: hsl(0, 0%, 100%);
+  --color-primary: rgb(0, 0, 0);
+  --color-danger: rgb(254, 101, 101);
+  --color-success: rgb(22, 231, 7);
+  --color-warning: rgb(227, 186, 6);;
 }

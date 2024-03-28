@@ -6,12 +6,14 @@ import {
 } from "./lib/display.js";
 import { initModal } from "./lib/modal.js";
 import { initScheduleForm } from "./features/addSchedule.js";
+import { initDeleteSchedule } from "./features/deleteSchedule.js";
 
 window.onload = () => {
   displaySchedulesNames(schedules);
   attachEventHandlerOnViewScheduleNames();
   initModal();
   initScheduleForm();
+  initDeleteSchedule();
 };
 
 export function attachEventHandlerOnViewScheduleNames() {
