@@ -1,3 +1,8 @@
+import { displaySchedulesNames } from "../lib/display";
+import schedules from "../database/schedules";
+import { attachEventHandlerOnViewScheduleNames } from "..";
+import { userEvent } from "@testing-library/user-event";
+
 export function setup() {
   document.body.innerHTML = `
     <body>
@@ -95,4 +100,12 @@ export function setup() {
       </main>
     </body>
   `;
+}
+
+export function setupWithSchedules() {
+  setup();
+  displaySchedulesNames(schedules);
+  attachEventHandlerOnViewScheduleNames();
+  const user = userEvent.setup();
+  return user;
 }

@@ -1,12 +1,12 @@
-import schedules from "./database/schedules.js";
+import schedules from "./database/schedules";
 import {
   displaySchedulesNames,
   displayScheduleInEditor,
   displayScheduleSelector
-} from "./lib/display.js";
-import { initModal } from "./lib/modal.js";
-import { initScheduleForm } from "./features/addSchedule/addSchedule.js";
-import { initDeleteSchedule } from "./features/deleteSchedule.js";
+} from "./lib/display";
+import { initModal } from "./lib/modal";
+import { initScheduleForm } from "./features/addSchedule/addSchedule";
+import { initDeleteSchedule } from "./features/deleteSchedule";
 
 window.onload = () => {
   displaySchedulesNames(schedules);

@@ -1,6 +1,6 @@
-import { displaySchNamesAfterDelete } from "../lib/display.js";
-import { attachEventHandlerOnViewScheduleNames } from "../index.js";
-import { displayMessage } from "../lib/message.js";
+import { displaySchNamesAfterDelete } from "../lib/display";
+import { attachEventHandlerOnViewScheduleNames } from "../index";
+import { displayMessage } from "../lib/message";
 
 export function initDeleteSchedule() {
   const deleteButton = document.querySelector(
