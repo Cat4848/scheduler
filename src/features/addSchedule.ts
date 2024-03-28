@@ -15,6 +15,7 @@ import { IOperation, ISchedule } from "../lib/definitions.js";
 import schedules from "../database/schedules.js";
 import { displaySchedulesNames } from "../lib/display.js";
 import { attachEventHandlerOnViewScheduleNames } from "../index.js";
+import { displayMessage } from "../lib/message.js";
 
 const operationName = "operation-name";
 const operationDescription = "operation-description";
@@ -133,6 +134,7 @@ function submitForm(e: Event) {
   });
   schedules.push(schedule);
   updateSchedules(schedules);
+  displayMessage("success", "New Schedule Added");
 }
 
 function updateSchedules(schedules: ISchedule<IOperation>[]) {
