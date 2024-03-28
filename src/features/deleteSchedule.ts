@@ -1,4 +1,4 @@
-import { displaySchNames } from "../lib/display.js";
+import { displaySchNamesAfterDelete } from "../lib/display.js";
 import { attachEventHandlerOnViewScheduleNames } from "../index.js";
 import { displayMessage } from "../lib/message.js";
 
@@ -17,23 +17,29 @@ function findSelectedSchedule() {
     const errorMessage = "Please select a schedule to delete";
     displayMessage("error", errorMessage);
   } else {
-    const selectedScheduleId = selectedSchedule.getAttribute("id");
-    const displayedSchedules = Array.from(
-      document.querySelectorAll(
-        ".schedule-name"
-      ) as NodeListOf<HTMLParagraphElement>
-    );
-    const updatedSchedules = displayedSchedules.filter(
-      (schedule) => schedule.id !== selectedScheduleId
-    );
-
-    displaySchNames(updatedSchedules);
-    attachEventHandlerOnViewScheduleNames();
-    const scheduleEditor = document.querySelector(
-      ".editor-schedule"
-    ) as HTMLDivElement;
-    scheduleEditor.innerText = "";
-    const successMessage = "Schedule Deleted";
-    displayMessage("success", successMessage);
+    deleteSchedule(selectedSchedule);
   }
+}
+
+function deleteSchedule(selectedSchedule: HTMLParagraphElement) {
+  const selectedScheduleId = selectedSchedule.getAttribute("id");
+  const displayedSchedules = Array.from(
+    document.querySelectorAll(
+      ".schedule-name"
+    ) as NodeListOf<HTMLParagraphElement>
+  );
+  const updatedSchedules = displayedSchedules.filter(
+    (schedule) => schedule.id !== selectedScheduleId
+  );
+  updateSchedules(updatedSchedules);
+  displayMessage("success", "Schedule Deleted");
+}
+
+function updateSchedules(updatedSchedules: HTMLParagraphElement[]) {
+  displaySchNamesAfterDelete(updatedSchedules);
+  attachEventHandlerOnViewScheduleNames();
+  const scheduleEditor = document.querySelector(
+    ".editor-schedule"
+  ) as HTMLDivElement;
+  scheduleEditor.innerText = "";
 }
