@@ -5,7 +5,7 @@ import {
   displayScheduleSelector
 } from "./lib/display.js";
 import { initModal } from "./lib/modal.js";
-import { initScheduleForm } from "./features/addSchedule.js";
+import { initScheduleForm } from "./features/addSchedule/addSchedule.js";
 import { initDeleteSchedule } from "./features/deleteSchedule.js";
 
 window.onload = () => {
