@@ -5,7 +5,8 @@ import {
   displayScheduleSelector
 } from "./lib/display.js";
 import { initModal } from "./lib/modal.js";
-import { initScheduleForm } from "./lib/scheduleForm.js";
+import { initScheduleForm } from "./features/addSchedule.js";
+
 window.onload = () => {
   displaySchedulesNames(schedules);
   attachEventHandlerOnViewScheduleNames();
