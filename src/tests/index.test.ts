@@ -1,10 +1,16 @@
-import { describe, expect, test } from "@jest/globals";
-import { sum, product } from "./example";
+import { expect, test } from "@jest/globals";
+import { setup } from "./setup";
+import { screen } from "@testing-library/dom";
+import "@testing-library/jest-dom";
 
-test("adds numbers", () => {
-  expect(sum(1, 2)).toBe(3);
-});
-
-test("multiply numbers", () => {
-  expect(product(1, 2)).toBe(2);
+test("Schedule Viewer and Schedule Editor appear on screen", () => {
+  setup();
+  expect(screen.getByText("Schedule Viewer")).toBeDefined();
+  expect(screen.getByText("Schedule Editor")).toBeDefined();
+  // const container = displaySchedulesNames(schedules);
+  // const header = document.querySelector(
+  //   "#schedule-viewer-header"
+  // ) as HTMLHeadingElement;
+  // const text = header.innerHTML;
+  // expect(text).toBe("Schedule Viewer");
 });
