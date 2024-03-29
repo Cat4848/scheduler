@@ -1,4 +1,4 @@
-import customQuerySelector from "./querySelector";
+import customQuerySelector from "./querySelector.js";
 
 function openModal() {
   const attributes = ".modal,.overlay";

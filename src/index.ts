@@ -1,13 +1,14 @@
-import schedules from "./database/schedules";
+import schedules from "./database/schedules.js";
 import {
   displaySchedulesNames,
   displayScheduleInEditor,
   displayScheduleSelector
-} from "./lib/display";
-import { initModal } from "./lib/modal";
-import { initScheduleForm } from "./features/addSchedule/addSchedule";
-import { initDeleteSchedule } from "./features/deleteSchedule";
+} from "./lib/display.js";
+import { initModal } from "./lib/modal.js";
+import { initScheduleForm } from "./features/addSchedule/addSchedule.js";
+import { initDeleteSchedule } from "./features/deleteSchedule.js";
 
+console.log("here no");
 window.onload = () => {
   displaySchedulesNames(schedules);
   attachEventHandlerOnViewScheduleNames();
