@@ -8,7 +8,6 @@ import { initModal } from "./lib/modal.js";
 import { initScheduleForm } from "./features/addSchedule/addSchedule.js";
 import { initDeleteSchedule } from "./features/deleteSchedule.js";
 
-console.log("here no");
 window.onload = () => {
   displaySchedulesNames(schedules);
   attachEventHandlerOnViewScheduleNames();
