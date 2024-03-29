@@ -1,4 +1,4 @@
-import { ISchedule, IOperation } from "./definitions";
+import { ISchedule, IOperation } from "./definitions.js";
 
 export class Schedule implements ISchedule<IOperation> {
   id: string;

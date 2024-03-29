@@ -50,7 +50,7 @@ npm run dev
 5. Open your web browser and paste the following URL into the address bar:
 
 ```
-http://localhost:3000
+http://localhost:3000/
 ```
 
 Once done, you should be greeted with the following project interface. Happy exploring!

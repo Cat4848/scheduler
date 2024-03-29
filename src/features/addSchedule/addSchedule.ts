@@ -1,21 +1,21 @@
-import createId from "../../lib/createId";
+import createId from "../../lib/createId.js";
 import {
   createInputGroup,
   createHeading,
   createInput,
   createLabel
-} from "./creators";
+} from "./creators.js";
 import {
   getOperationName,
   getOperationDescription,
   getOperationDuration
-} from "./getters";
-import { Schedule, Operation } from "../../lib/classes";
-import { IOperation, ISchedule } from "../../lib/definitions";
-import schedules from "../../database/schedules";
-import { displaySchedulesNames } from "../../lib/display";
-import { attachEventHandlerOnViewScheduleNames } from "../../index";
-import { displayMessage } from "../../lib/message";
+} from "./getters.js";
+import { Schedule, Operation } from "../../lib/classes.js";
+import { IOperation, ISchedule } from "../../lib/definitions.js";
+import schedules from "../../database/schedules.js";
+import { displaySchedulesNames } from "../../lib/display.js";
+import { attachEventHandlerOnViewScheduleNames } from "../../index.js";
+import { displayMessage } from "../../lib/message.js";
 
 const operationName = "operation-name";
 const operationDescription = "operation-description";

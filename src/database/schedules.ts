@@ -1,5 +1,5 @@
 import { ISchedule, IOperation } from "../lib/definitions";
-import createId from "../lib/createId";
+import createId from "../lib/createId.js";
 
 const bloodTestSchedule: ISchedule<IOperation> = {
   id: createId(),

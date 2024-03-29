@@ -3,7 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script async type="module" src="../dist/index.js"></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../src/assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../src/assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../src/assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script async type="module" src="../dist/src/index.js"></script>
     <link rel="stylesheet" href="./index.css" />
     <title>Scheduler</title>
   </head>
@@ -24,7 +42,11 @@
 
             <div class="viewer-action-buttons">
               <div class="overlay hidden"></div>
-              <button type="button" id="btn-open-modal" class="btn btn-primary btn-open-modal">
+              <button
+                type="button"
+                id="btn-open-modal"
+                class="btn btn-primary btn-open-modal"
+              >
                 Add Schedule
               </button>
               <button type="button" class="btn btn-danger btn-delete-schedule">

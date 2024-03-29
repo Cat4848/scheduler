@@ -2,9 +2,9 @@
   "name": "uk-robotics",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "type": "module",
-  "module": "src/index.js",
+  "module": "dist/src/index.js",
   "scripts": {
     "dev": "tsc -w",
     "lint": "eslint .",

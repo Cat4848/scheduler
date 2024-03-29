@@ -1,4 +1,4 @@
-import { ISchedule, IOperation } from "./definitions";
+import { ISchedule, IOperation } from "./definitions.js";
 
 export function displaySchedulesNames(schedules: ISchedule<IOperation>[]) {
   const schedulesList = document.querySelector(
