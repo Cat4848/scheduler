@@ -55,7 +55,7 @@ http://localhost:3000/
 
 Once done, you should be greeted with the following project interface. Happy exploring!
 
-![Initial Interface!](./src/assets/images/initial-interface.png)
+![Initial Interface!](./src/assets/images/main-panels.png)
 
 ## Features Overview
 
