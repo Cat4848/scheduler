@@ -55,7 +55,7 @@ http://localhost:3000/
 
 Once done, you should be greeted with the following project interface. Happy exploring!
 
-![Initial Interface!](./src/assets/initial-interface.png)
+![Initial Interface!](./src/assets/images/initial-interface.png)
 
 ## Features Overview
 
@@ -76,11 +76,11 @@ Underneath the "Schedules List" header, you'll find a comprehensive display of a
 
 To introduce a new schedule, simply click the "Add Schedule" button. Upon clicking, a modal will appear, presenting a form tailored for adding a new schedule.
 
-![Modal Display Short!](./src/assets/modal-display-short.png)
+![Modal Display Short!](./src/assets/images/modal-display-short.png)
 
 When you select the number of operations from the dropdown menu, the modal dynamically expands, revealing the requisite fields for each operation. Expect to see as many sets of new operations as the number selected from the dropdown menu.
 
-![Modal Display Long!](./src/assets/modal-display-long.png)
+![Modal Display Long!](./src/assets/images/modal-display-long.png)
 
 To successfully add a new schedule, complete the following mandatory fields:
 
@@ -90,7 +90,7 @@ To successfully add a new schedule, complete the following mandatory fields:
 
 After successfully adding a new schedule, a confirmation message will appear at the bottom of the main panels, similar to the example shown below:
 
-![New Schedule Confirmation!](./src/assets/new-schedule-confirmation.png)
+![New Schedule Confirmation!](./src/assets/images/new-schedule-confirmation.png)
 
 ### Exiting the Modal
 
@@ -106,19 +106,19 @@ To remove a schedule, please follow these steps:
 
 1. **Select Schedule:** Navigate to the "Schedules List" section and choose the schedule you wish to delete by clicking on its name. The selected schedule will be visually highlighted for clarity.
 
-![Select Schedule!](./src/assets/select-schedule.png)
+![Select Schedule!](./src/assets/images/select-schedule.png)
 
 2. **Click the "Delete Schedule" Button:** Once you've selected the desired schedule, simply click the "Delete Schedule" button. This action will promptly remove the selected schedule from the list.
 
 After successfully deleting a new schedule, a confirmation message will appear at the bottom of the main panels, similar to the example shown below:
 
-![Delete Schedule Confirmation!](./src/assets/delete-schedule-confirmation.png)
+![Delete Schedule Confirmation!](./src/assets/images/delete-schedule-confirmation.png)
 
 ### Delete Error
 
 If attempting to delete a schedule without first selecting one, an error message will appear below the main panels, similar to the example below:
 
-![Delete Error!](./src/assets/delete-error.png)
+![Delete Error!](./src/assets/images/delete-error.png)
 
 ## Schedule Editor Section
 
@@ -132,7 +132,7 @@ Currently, this section facilitates the viewing of operations associated with a 
 
 Refer to the illustration below for a visual representation of the schedule viewing feature:
 
-![Select Schedule to View!](./src/assets/select-schedule-to-view.png)
+![Select Schedule to View!](./src/assets/images/select-schedule-to-view.png)
 
 ## Licence
 
